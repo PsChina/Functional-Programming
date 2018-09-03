@@ -3,6 +3,3 @@ function map(val) {
        return f(val)
     }
 }
-
-
-
