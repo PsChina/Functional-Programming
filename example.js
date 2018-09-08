@@ -2,7 +2,7 @@
 
 const pipe = (...rest) => { // 将函数按按照顺序摆放
     return function(x){
-        let y= x
+        let y = x
         for(func of rest){
             y = func(y)
         }
@@ -16,9 +16,7 @@ const length = w => w.length // 获取字符串长度
 
 const map = f => { // 柯里化map
     return function(arr){
-        return arr.map(function(item){
-            return f(item)
-        })
+        return arr.map(f)
     }
 }
 
