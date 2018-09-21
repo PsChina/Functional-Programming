@@ -8,21 +8,36 @@
 
 只有纯的、没有副作用的函数，才是合格的函数。
 
-详细的说明请看 [阮一峰网络日志](http://www.ruanyifeng.com/blog/2017/02/fp-tutorial.html)
+函数式编程 [百度百科](https://baike.baidu.com/item/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/4035031?fr=aladdin)
 
-看了阮一峰的网络日志后感觉不是很懂不管了先一个demo练练手
+什么是 __副作用__ ？
+
+所谓"副作用"（side effect），指的是函数内部与外部互动（最典型的情况，就是修改全局变量的值），产生运算以外的其他结果。
+
+函数式编程强调没有"副作用"，意味着函数要保持独立，所有功能就是返回一个新的值，没有其他行为，尤其是不得修改外部变量的值。
+
+
+先写一个demo练练手
 
 ## map
 
+高阶函数
 ```js
-function map(val){
+function map(arr){
+    const newArr = arr.concat()
+    const {length} = arr
     return function(f){
-       return f(val)
+        for(let i=0; i<length; i++){
+            newArr[i] = f(newArr[i])
+        }
+        return newArr
     }
 }
 function double(x){
     return 2*x
 }
 
-map(3)(double)
+map([1,2,3])(double)
+
+// => [2,4,6]
 ```
