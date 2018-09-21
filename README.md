@@ -23,7 +23,7 @@
 
 高阶函数
 ```js
-function map(arr){
+function map(arr){ // 定义柯里化的map函数
     const newArr = arr.concat()
     const {length} = arr
     return function(f){
@@ -33,11 +33,11 @@ function map(arr){
         return newArr
     }
 }
-function double(x){
+function double(x){ // 定义double函数
     return 2*x
 }
 
-map([1,2,3])(double)
+map([1,2,3])(double) // 函数是一等公民
 // => [2,4,6]
 
 // 用 es5 和 es6 简化
