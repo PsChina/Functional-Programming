@@ -40,9 +40,9 @@ function double(x){ // 定义double函数
 map([1,2,3])(double) // 函数是一等公民
 // => [2,4,6]
 
-// 用 es5 和 es6 简化
+// 用 es5 和 es6 简化 
 const double = x=>2*x
-const map = arr=> f => arr.map(item=>f(item))
+const map = arr=> f => arr.map(item=>f(item)) //可以像公式推导一样编程
 
 map([1,2,3])(double)
 // => [2,4,6]
