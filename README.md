@@ -38,6 +38,12 @@ function double(x){
 }
 
 map([1,2,3])(double)
+// => [2,4,6]
 
+// 用 es5 和 es6 简化
+const double = x=>2*x
+const map = arr=> f => arr.map(item=>f(item))
+
+map([1,2,3])(double)
 // => [2,4,6]
 ```
